@@ -1,0 +1,18 @@
+{
+    "[python]": {
+        "editor.formatOnSave": true,
+        "editor.codeActionsOnSave": {
+            "source.organizeImports": "explicit"
+        },
+    },
+    "isort.args": [
+        "--line-length=88",
+        "--multi-line=3",
+        "--trailing-comma",
+        "--ensure-newline-before-comments",
+        "--force-grid-wrap=0",
+        "--use-parentheses",
+        "--combine-as",
+        "--split-on-trailing-comma"
+    ]
+}
