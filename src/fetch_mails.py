@@ -3,7 +3,7 @@ from logging import getLogger
 
 from imapclient import IMAPClient
 
-from config import EMAIL_ADDRESS, EMAIL_PASSWORD, IMAP_HOST, IMAP_PORT
+from config import EMAIL_ADDRESS, EMAIL_PASSWORD, IMAP_HOST, IMAP_PORT, FOLDER
 
 
 def fetch_google_alerts():
@@ -13,7 +13,7 @@ def fetch_google_alerts():
     with IMAPClient(IMAP_HOST, port=IMAP_PORT, ssl=True) as server:
         logger.info("Logging in to IMAP server")
         server.login(EMAIL_ADDRESS, EMAIL_PASSWORD)
-        server.select_folder("Papers")
+        server.select_folder(FOLDER)
         uids = server.search(["UNSEEN"])
         logger.info(f"Fetched {len(uids)} unseen mails")
         fetch_map = server.fetch(uids, ["BODY[]", "ENVELOPE"])

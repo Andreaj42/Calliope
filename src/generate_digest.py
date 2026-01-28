@@ -5,7 +5,7 @@ def generate_digest(scored_items):
         reverse=True,
     )
 
-    lines = ["# Paper Relevance Digest\n"]
+    lines = ["# Daily Article Suggestions\n"]
 
     for item in scored_items:
         title = item.get("title", "Untitled")

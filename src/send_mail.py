@@ -16,12 +16,12 @@ def send_scholar_rapport_by_mail(digest: str):
     message_body = digest
 
     msg = MIMEMultipart()
-    msg['From'] = 'Andrea Joly <papers@andrea-joly.fr>'
+    msg['From'] = 'Andrea Joly <andrea@andrea-joly.fr>'
     msg['To'] = RECIPIENT_MAIL
-    msg['Subject'] = "Rapport de mails scholar" + date.today().strftime(" %d/%m/%Y")
+    msg['Subject'] = "☕️ Daily Article Suggestions" + date.today().strftime(" %d/%m/%Y")
     msg.attach(MIMEText(message_body, 'plain'))
 
-    server.sendmail('papers@andrea-joly.fr', RECIPIENT_MAIL, msg.as_string())
+    server.sendmail('andrea@andrea-joly.fr', RECIPIENT_MAIL, msg.as_string())
 
     server.quit()
     logger.info("Mail sent successfully.")

@@ -11,8 +11,10 @@ SMTP_PORT = int(os.getenv("SMTP_PORT"))
 EMAIL_ADDRESS = os.getenv("EMAIL_ADDRESS")
 EMAIL_PASSWORD = os.getenv("EMAIL_PASSWORD")
 RECIPIENT_MAIL = os.getenv("RECIPIENT_MAIL")
+FOLDER = os.getenv("FOLDER")
 
 OLLAMA_URL = os.getenv("OLLAMA_URL")
 OLLAMA_MODEL = os.getenv("OLLAMA_MODEL")
 
 RESEARCH_PROFILE = os.getenv("RESEARCH_PROFILE")
+TASK = os.getenv("TASK")
