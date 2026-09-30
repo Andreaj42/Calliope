@@ -18,7 +18,8 @@ def send_scholar_rapport_by_mail(digest: str):
     msg = MIMEMultipart()
     msg['From'] = 'Andrea Joly <andrea@andrea-joly.fr>'
     msg['To'] = RECIPIENT_MAIL
-    msg['Subject'] = "☕️ Daily Article Suggestions" + date.today().strftime(" %d/%m/%Y")
+    iso_year, iso_week, _ = date.today().isocalendar()
+    msg['Subject'] = f"☕️ Weekly Article Suggestions - Week {iso_week}/{iso_year}"
     msg.attach(MIMEText(message_body, 'plain'))
 
     server.sendmail('andrea@andrea-joly.fr', RECIPIENT_MAIL, msg.as_string())
